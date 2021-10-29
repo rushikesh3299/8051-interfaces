@@ -1,0 +1,3 @@
+".\Objects\counter0_99.obj" 
+TO ".\Objects\counter" 
+PRINT(".\Listings\counter.m51")

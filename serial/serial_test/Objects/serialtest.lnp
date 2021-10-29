@@ -1,0 +1,3 @@
+".\Objects\serialtest.obj" 
+TO ".\Objects\serialtest" 
+PRINT(".\Listings\serialtest.m51")

@@ -1,0 +1,3 @@
+".\Objects\delay_gen.obj" 
+TO ".\Objects\delay_gen" 
+PRINT(".\Listings\delay_gen.m51")

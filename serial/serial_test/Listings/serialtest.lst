@@ -1,0 +1,61 @@
+C51 COMPILER V9.60.0.0   SERIALTEST                                                        08/30/2021 10:51:52 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SERIALTEST
+OBJECT MODULE PLACED IN .\Objects\serialtest.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE serialtest.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\serialtest.lst) TABS(2) OBJECT(.\Objects\serialtest.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          void main()
+   4          {
+   5   1        TMOD = 0x20;    // timer1 mode2
+   6   1        SCON=0x50 ;     // mode1 ren
+   7   1        TH1=0x0FD  ;    //9600 baud rate
+   8   1        TR1=1;          //on timer1 
+   9   1      
+  10   1        //tx 
+  11   1        while(1)
+  12   1        {
+  13   2          SBUF ='L';
+  14   2          while(!TI);
+  15   2          TI=0;
+  16   2            
+  17   2          SBUF ='A';
+  18   2          while(!TI);
+  19   2          TI=0;
+  20   2            
+  21   2          SBUF ='B';
+  22   2          while(!TI);
+  23   2          TI=0;
+  24   2            
+  25   2      
+  26   2          //rx
+  27   2          while(!RI);
+  28   2          P1=SBUF;
+  29   2          RI=0;
+  30   2            
+  31   2          while(!RI);
+  32   2          P1=SBUF;
+  33   2          RI=0;
+  34   2      
+  35   2        }
+  36   1      }                                                                                                                                                                                                                 
+             -      
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     53    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

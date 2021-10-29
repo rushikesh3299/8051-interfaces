@@ -1,0 +1,126 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/28/2021  11:31:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\buzzer.obj TO .\Objects\buzzer_interface PRINT (.\Listings\buzzer_interface.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\buzzer.obj (BUZZER)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\buzzer_interface (BUZZER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0027H     UNIT         ?PR?_DELAY?BUZZER
+            CODE    0827H     0013H     UNIT         ?PR?MAIN?BUZZER
+            CODE    083AH     0012H     UNIT         ?PR?BUZZFUN?BUZZER
+            CODE    084CH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\buzzer_interface (BUZZER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BUZZER
+
+?PR?MAIN?BUZZER
+  +--> ?PR?BUZZFUN?BUZZER
+  +--> ?PR?_DELAY?BUZZER
+
+?PR?BUZZFUN?BUZZER
+  +--> ?PR?_DELAY?BUZZER
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\buzzer_interface (BUZZER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BUZZER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/28/2021  11:31:58  PAGE 2
+
+
+  C:0807H         PUBLIC        _delay
+  C:083AH         PUBLIC        buzzfun
+  C:0827H         PUBLIC        main
+  B:0090H.1       PUBLIC        buzz
+  B:0090H.0       PUBLIC        sw
+  -------         PROC          L?0015
+  -------         ENDPROC       L?0015
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        delayInMs
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0807H         LINE#         5
+  C:0807H         LINE#         6
+  C:0807H         LINE#         9
+  C:0811H         LINE#         10
+  C:0811H         LINE#         11
+  C:081FH         LINE#         12
+  C:0826H         LINE#         13
+  -------         ENDPROC       _DELAY
+  -------         PROC          BUZZFUN
+  C:083AH         LINE#         15
+  C:083AH         LINE#         16
+  C:083AH         LINE#         17
+  C:083CH         LINE#         18
+  C:0843H         LINE#         19
+  C:0843H         LINE#         20
+  C:0843H         LINE#         21
+  C:0843H         LINE#         22
+  C:0846H         LINE#         23
+  C:0846H         LINE#         24
+  C:0846H         LINE#         25
+  C:0846H         LINE#         26
+  C:0849H         LINE#         27
+  C:084BH         LINE#         28
+  -------         ENDPROC       BUZZFUN
+  -------         PROC          MAIN
+  C:0827H         LINE#         30
+  C:0827H         LINE#         31
+  C:0827H         LINE#         32
+  C:0829H         LINE#         33
+  C:082BH         LINE#         34
+  C:082BH         LINE#         35
+  C:082BH         LINE#         36
+  C:082EH         LINE#         37
+  C:082EH         LINE#         38
+  C:0831H         LINE#         39
+  C:0838H         LINE#         40
+  C:0838H         LINE#         41
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BUZZER
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004CH BYTE ( 3%) *
+******************************************************************************
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/28/2021  11:31:58  PAGE 3
+
+
+Program Size: data=9.0 xdata=0 code=91
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
